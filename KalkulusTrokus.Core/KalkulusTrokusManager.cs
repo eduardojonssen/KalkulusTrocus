@@ -13,6 +13,7 @@ namespace KalkulusTrokus.Core
 	{
 		public CalculateTrokusResponse CalculateTrokus(CalculateTrokusRequest request)
 		{
+			LogManager.Log(request);
 			CalculateTrokusResponse response = new CalculateTrokusResponse();
 
 			try
@@ -33,9 +34,14 @@ namespace KalkulusTrokus.Core
 				response.Change = change;
 				response.IsValid = true;
 			}
-			catch (Exception ex) {
-				throw;
-				// TODO: Implementar tratamento.
+			catch (Exception ex) 
+			{
+				LogManager.Log(ex);
+				response.Reports.Add(new Report { ErrorOcurred = true, Message = "Não foi possível completar sua operação. Tente novamente mais tarde." });
+			}
+			finally
+			{
+				LogManager.Log(response);
 			}
 
 			return response;

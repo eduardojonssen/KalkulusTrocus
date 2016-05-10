@@ -13,6 +13,7 @@ namespace KalkulusTrokus.Core.Processors
 			new CoinChangeProcessor(),
 			new NoteChangeProcessor(),
 			new SilverChangeProcessor(),
+			new CandyChangeProcessor(),
 			//Adicionar novos processadores nessa lista.
 		};
 

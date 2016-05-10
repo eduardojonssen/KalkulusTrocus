@@ -16,7 +16,7 @@ namespace KalkulusTrokus.Core.Processors
 		{
 			get 
 			{
-				return new long[] { 100, 50, 25, 10, 5, 1 };
+				return new long[] { 100, 50, 25, 10, 5 };
 			}
 		}
 
